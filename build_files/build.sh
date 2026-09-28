@@ -9,7 +9,7 @@ cp -avf "/ctx/system_files"/. /
 dnf5 install -y \
     tmux \
     htop \
-    neofetch \
+    fastfetch \
     cowsay \
     fortune-mod \
     figlet \
