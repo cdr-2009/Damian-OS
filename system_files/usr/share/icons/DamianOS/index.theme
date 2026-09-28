@@ -1,0 +1,13 @@
+[Icon Theme]
+Name=DamianOS
+Comment=Icons and cursors featuring Damian Whitehouse (and his best mate Putin)
+Inherits=Adwaita,hicolor
+Directories=48x48/apps,cursors
+
+[48x48/apps]
+Size=48
+Context=Applications
+Type=Fixed
+
+[cursors]
+# cursor theme
