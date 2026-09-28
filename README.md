@@ -1,3 +1,5 @@
+THIS IS ALL AI GENERATED AS A JOKE FOR THE BEST COMP SCI TEACHER, DAMIAN WHITEHOUSE. PLEASE DO NOT TAKE THIS SERIOUSLY.
+
 # DamianOS
 
 **A custom Universal Blue (bootc) image inspired by the legendary teacher Damian Whitehouse — and his best mate, Putin.**
