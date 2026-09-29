@@ -3,8 +3,9 @@ FROM scratch AS ctx
 COPY build_files /
 COPY system_files /system_files
 
-# Base Image - using Bluefin for a polished desktop experience (great for teachers & students)
-# Alternatives: bazzite (gaming), aurora (KDE), or fedora-bootc
+# DamianOS base image
+# Built on Fedora Atomic technology through Universal Blue / Bluefin.
+# DamianOS adds its own branding, defaults, applications and configuration.
 FROM ghcr.io/ublue-os/bluefin:stable
 
 ### [IM]MUTABLE /opt

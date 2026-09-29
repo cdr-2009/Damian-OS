@@ -143,7 +143,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
     }
 
     _documentation() {
-        Util.trySpawnCommandLine('xdg-open https://docs.projectbluefin.io/')
+        Util.trySpawnCommandLine('xdg-open https://github.com/cdr-2009/damianos')
     }
 
     _overviewToggle() {

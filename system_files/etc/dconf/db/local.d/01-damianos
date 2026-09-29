@@ -1,3 +1,10 @@
 [org/gnome/desktop/background]
 picture-uri='file:///usr/share/backgrounds/damianos/damianos-wallpaper.png'
 picture-uri-dark='file:///usr/share/backgrounds/damianos/damianos-wallpaper.png'
+picture-options='zoom'
+primary-color='#FFEFD5'
+secondary-color='#FFEFD5'
+
+[org/gnome/desktop/interface]
+cursor-theme='DamianOS'
+accent-color='orange'
