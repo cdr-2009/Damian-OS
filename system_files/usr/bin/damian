@@ -1,0 +1,96 @@
+#!/bin/bash
+
+VERSION="1.0"
+
+show_banner() {
+    echo ""
+
+    if command -v figlet >/dev/null 2>&1 && command -v lolcat >/dev/null 2>&1; then
+        figlet -f slant "DamianOS" | lolcat
+    else
+        echo "DamianOS"
+    fi
+
+    echo ""
+}
+
+show_help() {
+    echo "DamianOS command-line utility"
+    echo ""
+    echo "Usage: damian <command>"
+    echo ""
+    echo "Commands:"
+    echo "  about       Show information about DamianOS"
+    echo "  info        Show system information"
+    echo "  update      Update the DamianOS system"
+    echo "  help        Show this help message"
+    echo "  version     Show the DamianOS version"
+    echo ""
+}
+
+show_about() {
+    show_banner
+    echo "DamianOS $VERSION"
+    echo ""
+    echo "A Fedora Atomic-based Linux distribution"
+    echo "Built on Fedora Atomic technology through Universal Blue."
+    echo ""
+    echo "Official colour: Papaya Whip #FFEFD5"
+    echo ""
+    echo "Inspired by Damian Whitehouse and his best mate Putin."
+    echo ""
+}
+
+show_info() {
+    echo "DamianOS $VERSION"
+    echo ""
+    echo "Kernel:       $(uname -r)"
+    echo "Architecture: $(uname -m)"
+    echo "Hostname:     $(hostname)"
+    echo ""
+
+    if command -v fastfetch >/dev/null 2>&1; then
+        fastfetch
+    fi
+}
+
+update_system() {
+    echo "Updating DamianOS..."
+    echo ""
+
+    if command -v bootc >/dev/null 2>&1; then
+        sudo bootc upgrade
+    else
+        echo "Error: bootc is not available."
+        return 1
+    fi
+}
+
+case "${1:-help}" in
+    about)
+        show_about
+        ;;
+
+    info)
+        show_info
+        ;;
+
+    update)
+        update_system
+        ;;
+
+    version)
+        echo "DamianOS $VERSION"
+        ;;
+
+    help|-h|--help)
+        show_help
+        ;;
+
+    *)
+        echo "Unknown command: $1"
+        echo ""
+        show_help
+        exit 1
+        ;;
+esac

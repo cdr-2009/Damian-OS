@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 set -ouex pipefail
 
@@ -6,6 +6,18 @@ set -ouex pipefail
 cp -avf "/ctx/system_files"/. /
 
 ### Install packages
+
+# Microsoft Visual Studio Code repository
+cat > /etc/yum.repos.d/vscode.repo <<'REPO'
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+REPO
+
 dnf5 install -y \
     tmux \
     htop \
@@ -15,11 +27,17 @@ dnf5 install -y \
     figlet \
     lolcat \
     gnome-tweaks \
-    gnome-extensions-app
+    gnome-extensions-app \
+    code \
+    firefox \
+    libreoffice
+
+# Install Bazaar from Flathub
+flatpak install -y --system  flathub io.github.kolunmi.Bazaar
 
 #### Enable useful services
 systemctl enable podman.socket
-# Disable Bluefin's terminal branding
+# Remove inherited terminal branding
 rm -f /etc/profile.d/ublue-motd.sh
 rm -f /etc/profile.d/ublue-fastfetch.sh
 
