@@ -19,6 +19,9 @@ dnf5 install -y \
 
 #### Enable useful services
 systemctl enable podman.socket
+# Disable Bluefin's terminal branding
+rm -f /etc/profile.d/ublue-motd.sh
+rm -f /etc/profile.d/ublue-fastfetch.sh
 
 # Create a fun motd / welcome message (Papaya Whip vibes)
 cat > /etc/motd << 'MOTD'
@@ -36,7 +39,7 @@ cat > /etc/motd << 'MOTD'
 ║                                                              ║
 ║              Official colour: Papaya Whip #FFEFD5            ║
 ║                                                              ║
-║   "The best teachers teach from the heart, not from the book"║
+║  "The best teachers teach from the heart, not from the book" ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝
 MOTD
@@ -67,3 +70,15 @@ echo "  Official colour : Papaya Whip (#FFEFD5)"
 echo "  Wallpapers      : /usr/share/backgrounds/damianos/  (incl. Papaya Whip pack)"
 echo "  Icons / Cursors : DamianOS theme"
 echo "  Default wallpaper: Damian & Putin on the train"
+
+# DamianOS branding
+sed -i \
+    -e 's/^NAME=.*/NAME="DamianOS"/' \
+    -e 's/^PRETTY_NAME=.*/PRETTY_NAME="DamianOS 1.0"/' \
+    -e 's/^ID=.*/ID=damianos/' \
+    -e 's/^VERSION=.*/VERSION="1.0"/' \
+    -e 's/^VERSION_ID=.*/VERSION_ID="1"/' \
+    -e 's|^HOME_URL=.*|HOME_URL="https://github.com/cdr-2009/damianos"|' \
+    /etc/os-release
+
+echo "DamianOS identity applied."
