@@ -96,7 +96,15 @@ sed -i \
     -e 's/^ID=.*/ID=damianos/' \
     -e 's/^VERSION=.*/VERSION="1.0"/' \
     -e 's/^VERSION_ID=.*/VERSION_ID="1"/' \
-    -e 's|^HOME_URL=.*|HOME_URL="https://github.com/cdr-2009/damianos"|' \
+    -e 's|^HOME_URL=.*|HOME_URL="https://github.com/cdr-2009/Damian-OS"|' \
+    -e 's|^DOCUMENTATION_URL=.*|DOCUMENTATION_URL="https://github.com/cdr-2009/Damian-OS"|' \
+    -e 's|^SUPPORT_URL=.*|SUPPORT_URL="https://github.com/cdr-2009/Damian-OS/issues"|' \
+    -e 's|^BUG_REPORT_URL=.*|BUG_REPORT_URL="https://github.com/cdr-2009/Damian-OS/issues"|' \
+    -e 's/^DEFAULT_HOSTNAME=.*/DEFAULT_HOSTNAME="damianos"/' \
+    -e 's/^VARIANT=.*/VARIANT="DamianOS"/' \
+    -e 's/^VARIANT_ID=.*/VARIANT_ID=damianos/' \
+    -e 's/^IMAGE_ID=.*/IMAGE_ID="damianos"/' \
+    -e 's/^IMAGE_VERSION=.*/IMAGE_VERSION="1.0"/' \
     /etc/os-release
 
 echo "DamianOS identity applied."
