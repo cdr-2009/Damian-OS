@@ -10,4 +10,6 @@ Context=Applications
 Type=Fixed
 
 [cursors]
-# cursor theme
+Size=32
+Context=Cursor
+Type=Fixed
